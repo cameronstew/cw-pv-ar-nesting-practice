@@ -37,45 +37,62 @@ set a variable called companies = to all the Companies.
   products = Product.order(:name)
 
 2. set a variable called locations = to all the Locations ordered by street_name.
+  locations = Location.order(:street_name)
 
 
 3. set a variable called reviews = to all the Reviews ordered by rating.
+  reviews = Review.order(:rating)
 
 
 4. set a variable called company = to the Company with an ID of 10.
+  company = Company.find(10)
 
 
 5. select all of the products that belong to that company.
+  company.products.all
 
 
 6. select all of the locations that belong to that company.
+  company.locations.all
 
 
 7. select the first product that belongs to that company.
+  company.products.first
 
 
 8. select all the reviews that belong to that product.
+  first_product = company.products.first
+  first_product.reviews.all
 
 
 9. select all the reviews that belong to the product with id of 1.
+  reviews = Product.find(1).reviews.all
 
 
-10. update each product's rating to 0.
+10. update each reviews's rating to 0.
+reviews = Product.find(1).reviews.all
+  reviews.each do |review|
+    review.rating = 0
+  end
 
 
 11. select all the reviews with a rating of greater than 5.  
     Review.where("rating  > 5")
 
+
 12. select all the companies with a start date before 12/12/2012.  
     Company.where(['start_date < ?', '12/12/2012'])
 
 13. How many are there?
+    Company.where(['start_date < ?', '12/12/2012']).length = 9
 
 
 14. select all the products with a price greater than 50. Product.where("? > ?")
-
+    Product.where("price > 50")
 
 15. select review with id of 10 and return the product it belongs to.
+    Review.find(10).product
+  
 
 
 
