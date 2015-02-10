@@ -2,8 +2,8 @@ The goal of this exercise is to experiment with a belongs_to and has_many both i
 
 ```
 
-bundle
-rake db:create db:migrate db:seed
+*bundle
+*rake db:create db:migrate db:seed
 
 ```
 
@@ -15,7 +15,7 @@ Companies have many Locations and Products.
 
 Products have many reviews.
 
-Use boostrap but don't worry about Footer or Navbar.
+*Use boostrap but don't worry about Footer or Navbar.
 
 
 
